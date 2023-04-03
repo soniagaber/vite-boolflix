@@ -26,7 +26,7 @@ export default {
         <SerieItem v-for="ser in store.serie" :serie="ser" class="serie"></SerieItem>
     </ul>
     <div v-else-if="store.film.length ==0 && store.serie.length == 0 && this.store.ricerca==''">
-        Ricerca un film o una serie
+        
     </div>
     <div v-else>
         {{ this.store.messaggio }}
