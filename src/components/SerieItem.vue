@@ -33,6 +33,8 @@ export default{
         Lingua: <span :class="`fi fi-${bandiera()}`"></span>
         <br>
         Voto: {{ serie.vote_average }}
+        <br>
+        <img :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`" alt="">
         <hr>
     </div>
 </template>

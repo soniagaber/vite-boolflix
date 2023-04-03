@@ -15,6 +15,15 @@ export default{
             if(lingua=="en"){
                 lingua="gb"
             }
+            if(lingua=="jn"){
+                lingua="jp"
+            }
+            if(lingua=="zh"){
+                lingua="cn"
+            }
+            if(lingua=="ko"){
+                lingua="kr"
+            }
             if(lingua==" "){
                 lingua="Sconosciuta";
             }
@@ -33,6 +42,8 @@ export default{
         Lingua: <span :class="`fi fi-${bandiera()}`"></span>
         <br>
         Voto: {{ film.vote_average }}
+        <br>
+        <img :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" alt="">
         <hr>
     </div>
 </template>
