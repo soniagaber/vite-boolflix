@@ -47,7 +47,7 @@ export default {
 </script>
 
 <template>
-
+  <i class="fa-solid fa-star"></i>
   <AppHeader @cercaFilm="cercaFilm()" @cercaSerie="cercaSerie()" @noRisultati="noRisultati()"></AppHeader>
   <AppMain></AppMain>
   
