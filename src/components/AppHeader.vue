@@ -10,6 +10,6 @@ export default{
 }</script>
 <template>
     <input type="text" v-model="store.ricerca">
-    <button @click="$emit('cercaFilm')"> ok </button>
+    <button @click="$emit('cercaFilm'), $emit('cercaSerie'), $emit('noRisultati')" > ok </button>
 </template>
 <style lang="scss" scoped></style>
