@@ -52,7 +52,7 @@ export default {
         gap: 15px;
         width: auto;
         overflow-x: auto;
-        padding: 1.5em 40px 0 40px;
+        padding: 1.5em 40px 1em 40px;
     }
     h2{
         padding: 1em 40px 0 40px ;

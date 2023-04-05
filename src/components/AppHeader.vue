@@ -12,7 +12,7 @@ export default{
     <div id="header-container">
         <h1>BOOLFLIX</h1>
         <div id="ricerca-container">
-            <input type="text" v-model="store.ricerca" placeholder="Cerca un film o una serie">
+            <input type="text" v-model="store.ricerca" placeholder="Cerca un film o una serie" @keyup.enter="$emit('cercaFilm'), $emit('cercaSerie'), $emit('noRisultati')">
             <button @click="$emit('cercaFilm'), $emit('cercaSerie'), $emit('noRisultati')" > ok </button>
         </div>
     </div>

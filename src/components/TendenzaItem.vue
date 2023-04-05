@@ -68,6 +68,12 @@ export default{
 }
 #container{
     position: relative;
+    height: 467px;
+    width: 342px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1.5px solid white;
+    overflow: hidden;
     &:hover{
         cursor: pointer;
         &:hover #cover-layover{
@@ -86,11 +92,12 @@ export default{
     background-color: black;
     display: none;
     border: 1.5px solid white;
+    overflow-y: auto;
 }
 
 img{
     border-radius: 6px;
-    border: 1.5px solid white;
+    object-fit: cover;
 }
 
 </style>
