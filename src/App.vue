@@ -15,6 +15,10 @@ export default {
     AppHeader,
   },
   created(){
+    axios.get("https://api.themoviedb.org/3/trending/all/day?api_key=5633e65f475390e7a8648cd7878774bf").then((res)=>{
+      console.log(res);
+      this.store.tendenza=res.data.results;
+    });
     },
   methods:{
     cercaFilm(){
@@ -37,7 +41,7 @@ export default {
     },
     noRisultati(){
       if (this.store.film.length ==0 && store.serie.length == 0 && this.store.ricerca!=''){
-        this.store.messaggio="Nessun film o serie trovata"
+        this.store.messaggio="Nessun film o serie corrisponde alla tua ricerca"
       }
         
   

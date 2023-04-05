@@ -1,7 +1,4 @@
 <script>
-import { library } from '../../node_modules/@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '../../node_modules/@fortawesome/vue-fontawesome';
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 
 export default{
     name:"SerieItem",
@@ -46,18 +43,56 @@ export default{
 }
 </script>
 <template>
-    <div>
-        Titolo: {{ serie.name }}
-        <br>
-        Titolo Originale: {{ serie.original_name }}
-        <br>
-        Lingua: <span :class="`fi fi-${bandiera()}`"></span>
-        <br>
-        Voto:<i v-for="(stella, index) in stelle" :class= classeStella(serie.vote_average,index)></i>
-        <br>
+    <div id="container">
+        <div id="cover-layover">
+            <div id="info">
+            Titolo: {{ serie.name }}
+            <br>
+            Titolo Originale: {{ serie.original_name }}
+            <br>
+            Lingua: <span :class="`fi fi-${bandiera()}`"></span>
+            <br>
+            Voto:<i v-for="(stella, index) in stelle" :class= classeStella(serie.vote_average,index)></i>
+            <br>
+            <br>
+            {{ serie.overview }}
+            </div>
+        </div>
+        
         <img :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`" alt="">
         <hr>
     </div>
 </template>
 <style lang="scss" scoped>
+#info{
+    position: absolute;
+    display: none;
+    margin: 20px;
+}
+#container{
+    position: relative;
+    &:hover{
+        cursor: pointer;
+        &:hover #cover-layover{
+            display: block;
+            &:hover #info{
+            display: block;
+        }
+        }
+    }
+}
+#cover-layover{
+    border-radius: 6px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: none;
+    border: 1.5px solid white;
+}
+
+img{
+    border-radius: 6px;
+    border: 1.5px solid white;
+}
 </style>

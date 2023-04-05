@@ -1,17 +1,17 @@
 <script>
 export default{
-    name:"FilmItem",
+    name:"TendenzaItem",
     data(){
         return{
-            stelle:[1,2,3,4,5],
+            stelle:[1,2,3,4,5]
         }
     },
     props:{
-        film: Object
+        tendenza: Object,
     },
     methods:{
         bandiera(){
-            let lingua=this.film.original_language;
+            let lingua=this.tendenza.original_language;
             if(lingua=="en"){
                 lingua="gb"
             }
@@ -30,7 +30,7 @@ export default{
 
             return lingua;
         },
-        classeStellaFilm(voto, indice){
+        classeStellaTendenza(voto, indice){
             if(Math.ceil(voto/2)>indice){
                 return "fa-solid fa-star";
             }
@@ -44,21 +44,20 @@ export default{
 <template>
     <div id="container">
         <div id="cover-layover">
-            <div id="info">
-        Titolo: {{ film.title }}
-        <br>
-        Titolo Originale: {{ film.original_title }}
-        <br>
-        Lingua: <span :class="`fi fi-${bandiera()}`"></span>
-        <br>
-        Voto: <i v-for="(stella, index) in stelle" :class= classeStellaFilm(film.vote_average,index)></i>
-        <br>
-        <br>
-        {{ film.overview }}
-    </div>
-    </div>
-        <img :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" alt="">
-        <hr>
+        <div id="info">
+            Titolo: {{ tendenza.title }}
+            <br>
+            Titolo Originale: {{ tendenza.original_title }}
+            <br>
+            Lingua: <span :class="`fi fi-${bandiera()}`"></span>
+            <br>
+            Voto:<i v-for="(stella, index) in stelle" :class= classeStellaTendenza(tendenza.vote_average,index)></i>
+            <br>
+            <br>
+            {{ tendenza.overview }}
+        </div>
+        </div>
+            <img :src="`https://image.tmdb.org/t/p/w342${tendenza.poster_path}`" alt="">
     </div>
 </template>
 <style lang="scss" scoped>
@@ -93,4 +92,5 @@ img{
     border-radius: 6px;
     border: 1.5px solid white;
 }
+
 </style>
